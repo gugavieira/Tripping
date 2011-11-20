@@ -1,4 +1,9 @@
 Tripping::Application.routes.draw do
+    
+    resources :photosets
+  
+  match "/admin/" => "admin#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

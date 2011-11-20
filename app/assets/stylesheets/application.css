@@ -5,3 +5,188 @@
  *= require_self
  *= require_tree . 
 */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* GLOBAL */
+
+body {
+ /*background-repeat: no-repeat;
+ background-position: center top;
+ background-image: url(../images/bgguide.png);*/
+ background-color: #1a1a1a;
+ text-align: left; 
+ font-family: PNovaRegular, helvetica, arial, sans-serif; 
+ line-height: 18px;
+ font-size: 14px;
+ color: #999999;
+}
+
+body.home #menu a.home{
+    border-bottom:2px solid white;
+}
+
+body.blog #menu a.blog{
+    border-bottom:2px solid white;
+}
+
+body.about #menu a.about{
+    border-bottom:2px solid white;
+}
+
+p {
+   padding-bottom: 18px; 
+}
+
+p a:hover{
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    padding-bottom: 18px;
+}
+
+h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+a{
+ color: #999999;
+ text-decoration: none;
+}
+
+
+#container{
+    width: 978px;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+#header {
+    margin-top: 64px;
+    overflow: hidden;
+}
+
+#logo {
+	display:block;
+    position: relative;
+    /*left: -23px;*/
+    margin-right: 23px;
+	width:280px;
+	height:95px;
+	text-indent:-9999px;
+	background:url(../images/tripping_logo.png) no-repeat;
+    float: left;
+
+}
+
+#menu a{
+    font-family: PNovaCondRegular, helvetica, arial, sans-serif;
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    margin: 68px 16px 0 0;
+}
+
+#menu a:hover {
+        border-bottom:2px solid white;
+        text-decoration: none;
+}
+
+#menu li {
+    float: left;
+}
+
+#recent {
+    margin-top: 37px;
+}
+
+#recent_text {
+    width: 210px;
+    float: right;
+    background: url(../images/corner.png) no-repeat top left;
+    padding: 16px 0 0 14px;
+}
+
+a.fb_share {
+    display: block;
+    height: 18px;
+    padding-left: 23px;
+    background: url(../images/fb_icon.png) no-repeat left center;
+    text-transform: uppercase;
+}
+
+#thumb_container{
+    margin-left: -6px;
+    margin-top: 31px;
+    overflow: hidden;
+}
+
+.thumbs{
+    width: 240px;
+    float: left;
+    margin: 0 0 16px 6px;
+}
+
+.thumbs a{
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.thumbs .thumbs_others {
+    display: block;
+    width: 240px;
+    height: 16px;
+    background-color: #151515;
+}
+
+.thumbs a:hover .img_container img {
+    visibility: hidden;
+}

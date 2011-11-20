@@ -1,0 +1,25 @@
+<body class="admin sets">
+<div id="container">
+    <div id="header">
+		<a id="logo" href="/admin">Tripping</a>
+		<ul id="menu">
+			<li><a class="sets_admin" href="index.html">Sets</a></li>
+			<li><a class="blog_admin" href="#">Blog</a></li>
+			<li><a class="about_admin" href="#">Categories</a></li>
+		</ul>
+	</div>
+	<% flash.each do |key, value| %>
+      		<%= content_tag(:div, value, :class => "flash #{key}") %>
+  	<% end %>
+	<div id="admin_actions">
+	   <a href="" class="btn small">Add new sets</a>
+	</div>
+	<div id="thumb_container">
+    	<% unless @photosets.empty? %>
+    		<%= render :partial => 'admin/photoset', :collection => @photosets %>
+    	<% else %>
+    		<p>No photosets to show.</p>
+    	<% end %>
+    </div>
+</div>
+</body>
