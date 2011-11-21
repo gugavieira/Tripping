@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: photosets
+#
+#  id              :integer         not null, primary key
+#  name            :string(255)
+#  flickr_set_id   :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#  flickr_thumb_id :integer
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
 one:

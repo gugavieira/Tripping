@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/ctran/annotate_models.git
+  revision: ab62e8c131c9a67d687fa23ed5ee05c3bf450852
+  specs:
+    annotate (2.4.1.beta1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -45,6 +51,7 @@ GEM
     execjs (1.2.9)
       multi_json (~> 1.0)
     faker (0.3.1)
+    flickraw (0.9.4)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.17)
@@ -112,8 +119,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate!
   coffee-rails (~> 3.1.0)
   faker (= 0.3.1)
+  flickraw
   jquery-rails
   rails (= 3.1.0)
   sass-rails (~> 3.1.0)

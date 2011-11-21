@@ -11,14 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111118163209) do
+ActiveRecord::Schema.define(:version => 20111120192343) do
 
   create_table "photosets", :force => true do |t|
     t.string   "name"
     t.integer  "flickr_set_id"
-    t.string   "thumbnail"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "flickr_thumb_id"
   end
+
+  add_index "photosets", ["flickr_thumb_id"], :name => "index_photosets_on_flickr_thumb_id"
 
 end

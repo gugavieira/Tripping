@@ -6,6 +6,7 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'flickraw'
 
 
 # Gems used only for assets and not required
@@ -29,6 +30,8 @@ gem 'jquery-rails'
 
 group :development do
   gem 'faker', '0.3.1'
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+
 end
 
 group :test do

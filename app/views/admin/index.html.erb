@@ -16,10 +16,17 @@
 	</div>
 	<div id="thumb_container">
     	<% unless @photosets.empty? %>
+	    	<h2>Sets:</h2>
     		<%= render :partial => 'admin/photoset', :collection => @photosets %>
     	<% else %>
     		<p>No photosets to show.</p>
     	<% end %>
+    </div>
+    <div id="thumb_container">
+	    <% unless @new_photosets.empty? %>
+		    <h2>Not imported sets:</h2>
+	    	<%= render :partial => 'admin/new_photoset', :collection => @new_photosets %>
+	    <% end %>
     </div>
 </div>
 </body>
