@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111121194238) do
+ActiveRecord::Schema.define(:version => 20111122225239) do
 
   create_table "photosets", :force => true do |t|
     t.string   "name"
-    t.integer  "flickr_set_id"
+    t.string   "flickr_set_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "flickr_thumb_url"

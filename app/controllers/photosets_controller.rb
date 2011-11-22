@@ -3,7 +3,6 @@ class PhotosetsController < ApplicationController
   end
 
   def create
-    params[:photoset][:id] = params[:photoset][:id].to_i
     @new_photoset = Photoset.new(params[:photoset])
     @new_photoset.save!
     redirect_to admin_path

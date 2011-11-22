@@ -1,5 +1,0 @@
-<div class="thumbs">
-	<%= image_tag( flickrurl_240(new_photoset.primary), :alt => new_photoset.title ) %>
-	<h3><%= new_photoset.title %></h3><%= new_photoset.id %>
-	<p>( <%= link_to "Import", new_photoset_path, :confirm => "Are you sure?" %> )</p>
-</div>
