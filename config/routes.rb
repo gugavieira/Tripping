@@ -1,6 +1,6 @@
 Tripping::Application.routes.draw do
     
-    resources :photosets
+  resources :photosets
   
   match "/admin/" => "admin#index"
 

@@ -23,9 +23,9 @@
     	<% end %>
     </div>
     <div id="thumb_container">
-	    <% unless @new_photosets.empty? %>
+	    <% unless new_photosets.empty? %>
 		    <h2>Not imported sets:</h2>
-	    	<%= render :partial => 'admin/new_photoset', :collection => @new_photosets %>
+	    	<%= render :partial => 'admin/new_photoset', :collection => new_photosets %>
 	    <% end %>
     </div>
 </div>

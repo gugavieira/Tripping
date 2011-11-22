@@ -1,5 +1,10 @@
 <div class="thumbs">
 	<%= image_tag( flickrurl_240(new_photoset.primary), :alt => new_photoset.title ) %>
 	<h3><%= new_photoset.title %></h3><%= new_photoset.id %>
-	<p>( <%= link_to "Import", new_photoset_path, :confirm => "Are you sure?" %> )</p>
+	<%= form_for (@new_photoset) do |f| %>
+				                      <%= f.hidden_field :name, :value => new_photoset.title %>
+				                      <%= f.hidden_field :flickr_set_id, :value => new_photoset.id %>
+				                      <%= f.hidden_field :flickr_thumb_url, :value => flickrurl_240(new_photoset.primary) %>
+				                      <%= f.submit "Import" %>
+	<% end %>
 </div>

@@ -1,5 +1,5 @@
 <div class="thumbs">
-	<%= image_tag( flickrurl_240(photoset.flickr_thumb_id), :alt => photoset.name ) %>
+	<%= image_tag( photoset.flickr_thumb_url, :alt => photoset.name ) %>
 	<h3><%= photoset.name %></h3>
 	<p>( <%= link_to "Update", photoset_path(photoset), :confirm => "Are you sure?", :method => :put %> /
 	<%= link_to "Delete", photoset_path(photoset), :confirm => "Are you sure?", :method => :delete %> )</p>
