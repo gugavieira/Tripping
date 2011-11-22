@@ -28,6 +28,11 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+group :production do
+  # gems specifically for Heroku go here
+  gem "pg"
+end
+
 group :development do
   gem 'faker', '0.3.1'
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
