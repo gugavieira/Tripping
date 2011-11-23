@@ -1,6 +1,6 @@
 module AdminHelper
 
-  def new_photosets
+  def not_imported_sets
   	flickr_sets.reject{|element| Photoset.exists?(:flickr_set_id => element['id'])}
   end
 
