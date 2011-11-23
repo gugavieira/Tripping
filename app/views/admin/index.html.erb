@@ -15,17 +15,17 @@
 	   <a href="" class="btn small">Add new sets</a>
 	</div>
 	<div id="thumb_container">
-    	<h2>Sets:</h2>
     	<% unless @photosets.empty? %>
+	    	<h2>Sets:</h2>
     		<%= render :partial => 'admin/photoset', :collection => @photosets %>
     	<% else %>
     		<p>No photosets to show.</p>
     	<% end %>
     </div>
     <div id="thumb_container">
-	    <% unless @not_imported_sets.empty? %>
+	    <% unless new_photosets.empty? %>
 		    <h2>Not imported sets:</h2>
-	    	<%= render :partial => "not_imported_set", :collection => @not_imported_sets %>
+	    	<%= render :partial => 'admin/new_photoset', :collection => new_photosets %>
 	    <% end %>
     </div>
 </div>
