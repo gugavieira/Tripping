@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: photos
+#
+#  id          :integer         not null, primary key
+#  photoset_id :integer
+#  url         :string(255)
+#  private     :boolean         default(FALSE)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  url: MyString
+  private: false
+
+two:
+  url: MyString
+  private: false

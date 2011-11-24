@@ -1,0 +1,10 @@
+<div class="thumbs">
+	<%= image_tag( flickrurl_240(not_imported_set.primary), :alt => not_imported_set.title ) %>
+	<h3><%= not_imported_set.title %></h3><%= not_imported_set.id %>
+	<%= form_for (@new_photoset) do |f| %>
+				                      <%= f.hidden_field :name, :value => not_imported_set.title %>
+				                      <%= f.hidden_field :flickr_set_id, :value => not_imported_set.id %>
+				                      <%= f.hidden_field :flickr_thumb_url, :value => flickrurl_240(not_imported_set.primary) %>
+				                      <%= f.submit "Import" %>
+	<% end %>
+</div>

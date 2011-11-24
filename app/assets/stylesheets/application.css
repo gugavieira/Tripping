@@ -175,6 +175,10 @@ a.fb_share {
     margin: 0 0 16px 6px;
 }
 
+.thumbs img{
+    max-height: 160px;
+}
+
 .thumbs a{
     text-transform: uppercase;
     font-size: 12px;
