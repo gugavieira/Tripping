@@ -1,12 +1,20 @@
 class PhotosetsController < ApplicationController
+
   def index
   end
 
   def create
-    params[:photoset][:id] = params[:photoset][:id].to_i
-    @new_photoset = Photoset.new(params[:photoset])
-    @new_photoset.save!
-    redirect_to admin_path
+    new_photoset = Photoset.new(params[:photoset])
+    new_photoset.photo.build(photos_flickr_params(params[:photoset][:flickr_set_id]))
+    if new_photoset.save!
+      flash[:Success] = 'Photoset imported.'
+      redirect_to admin_path
+    else
+      flash[:error] = 'Something went wrong.'
+      redirect_to admin_path
+    end
+
+
   end
   
   def edit
