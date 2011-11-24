@@ -7,12 +7,16 @@
   	<meta name="keywords" content="" />
 	<meta name="robots" content="" />
 
-	<%= stylesheet_link_tag 'application.css' %> 
+	<%= stylesheet_link_tag 'application.css' %>
+	<%= yield :custom_css %>
     <%= javascript_include_tag 'application.js' %>
 
     <%= csrf_meta_tags %>
 </head>
-
+<body class="<%= yield :body_class %>">
+<div id="container">
 <%= yield %>
 <%= debug(params) if Rails.env.development? %>
+</div>
+</body>
 </html>

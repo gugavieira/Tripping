@@ -3,7 +3,8 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require_tree . 
+ *= require font-face
+ * require_tree . 
 */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -56,7 +57,7 @@ q:before, q:after {
 body {
  /*background-repeat: no-repeat;
  background-position: center top;
- background-image: url(../images/bgguide.png);*/
+ background-image: url(bgguide.png);*/
  background-color: #1a1a1a;
  text-align: left; 
  font-family: PNovaRegular, helvetica, arial, sans-serif; 
@@ -144,6 +145,29 @@ a{
     float: left;
 }
 
+/* #########  PHOTOS PAGE ################# */
+
+#photos_container {
+    margin-top: 37px;
+}
+
+#photos_header {
+    height: 54px;
+    padding: 16px 0 0 16px;
+    background: url(../images/corner.png) no-repeat top left;
+}
+
+.photo img {
+    display: block;
+    max-width: 978px;
+    max-height: 683px;
+}
+
+.photo {
+    margin: 0 16px 16px 0;
+    float: left;
+}
+
 #recent {
     margin-top: 37px;
 }
@@ -173,6 +197,11 @@ a.fb_share {
     width: 240px;
     float: left;
     margin: 0 0 16px 6px;
+}
+
+.img_container {
+    height: 160px;
+    margin-bottom: 5px;
 }
 
 .thumbs img{

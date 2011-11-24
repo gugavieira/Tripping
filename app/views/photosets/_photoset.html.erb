@@ -1,0 +1,8 @@
+<div class="thumbs">
+	<%= link_to(photoset) do %>
+		<div class="img_container" style="background:url(<%= photoset.flickr_thumb_url %>) no-repeat">
+		<img class="gray" src="<%= photoset.flickr_thumb_url %>" alt="thumb1" />
+		</div>
+		<%= photoset.name %>
+	<% end %>
+</div>

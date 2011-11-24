@@ -1,0 +1,8 @@
+<% content_for :body_class, '' %>
+<%= render 'shared/header' %>
+<div id="photos_container">
+	<div id="photos_header">
+	    <h2><%= @title %></h2>
+	</div>
+	<%= render :partial => 'photo', :collection => @photos %>
+</div>

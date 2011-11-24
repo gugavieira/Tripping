@@ -1,6 +1,13 @@
 class PhotosetsController < ApplicationController
 
   def index
+    @title = "Home"
+    @photosets = Photoset.all
+  end
+
+  def show
+    @title = Photoset.find(params[:id]).name
+    @photos = Photoset.find(params[:id]).photo
   end
 
   def create
