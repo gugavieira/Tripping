@@ -7,7 +7,7 @@ class PhotosetsController < ApplicationController
 
   def show
     @title = Photoset.find(params[:id]).name
-    @photos = Photoset.find(params[:id]).photo
+    @photos = Photoset.find(params[:id]).photo.paginate(:page => params[:page], :per_page => 20)
   end
 
   def create

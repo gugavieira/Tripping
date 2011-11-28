@@ -12,4 +12,6 @@
 
 class Photoset < ActiveRecord::Base
 	has_many :photo, :dependent => :destroy
+
+	default_scope :order => 'updated_at DESC'
 end

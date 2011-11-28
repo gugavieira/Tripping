@@ -18,6 +18,7 @@ module FlickrHelper
 	end
 
 	def not_imported_sets
+		@photosets ||= Photoset.all
 		flickr_sets.reject{|element| @photosets.any?{|item| item.flickr_set_id == element['id']}}
 	# flickr_sets.reject{|element| @photosets.any?{:flickr_set_id => element['id'])}
 	end
