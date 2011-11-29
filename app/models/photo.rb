@@ -11,7 +11,10 @@
 #
 
 class Photo < ActiveRecord::Base
-	attr_accessible :url
+	attr_accessible :url, :private
 
 	belongs_to :photoset
+
+	scope :only_public, where(:private => false)
+
 end

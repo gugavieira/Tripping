@@ -7,9 +7,8 @@
   		<%= content_tag(:div, value, :class => "flash #{key}") %>
 	<% end %>
 <div id="admin_actions">
-   <a href="" class="btn small">Add new sets</a>
 </div>
-<div id="thumb_container">
+<div id="thumb_container" data-update-url="<%= save_order_photosets_path %>">
 	<h2>Sets:</h2>
 	<% unless @photosets.empty? %>
 		<%= render :partial => 'admin/photoset', :collection => @photosets %>

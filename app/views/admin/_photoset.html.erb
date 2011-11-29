@@ -1,4 +1,4 @@
-<div class="thumbs">
+<div class="thumbs" id="set_<%= photoset.id %>">
 	<%= image_tag( photoset.flickr_thumb_url, :alt => photoset.name ) %>
 	<h3><%= photoset.name %></h3>
 	<p>( <%= link_to "Update", photoset_path(photoset), :confirm => "Are you sure?", :method => :put %> /

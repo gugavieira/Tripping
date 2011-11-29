@@ -12,6 +12,13 @@
 
 class Photoset < ActiveRecord::Base
 	has_many :photo, :dependent => :destroy
+	
+	default_scope :order => 'position'
 
-	default_scope :order => 'updated_at DESC'
+	def self.refresh_order
+		self.all.each_with_index do |photoset, index|
+			photoset.update_attributes(:position => index + 1)
+		end
+	end
+	
 end

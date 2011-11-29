@@ -1,4 +1,6 @@
 class AdminController < ApplicationController
+
+  before_filter :flickr_authenticate
       
   def index
     @title = "Admin"

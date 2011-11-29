@@ -1,6 +1,8 @@
 Tripping::Application.routes.draw do
     
-  resources :photosets
+  resources :photosets do
+  	collection { post :save_order }
+  end
 
   root :to => "photosets#index"
 
