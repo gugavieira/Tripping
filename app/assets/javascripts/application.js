@@ -7,4 +7,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require grayscale
+//= require endless-scroll
 // require_tree .
