@@ -7,23 +7,3 @@
 	<%= render :partial => 'photo', :collection => @photos %>
 </div>
 <%= will_paginate @photos %>
-
-  <script type="text/javascript" charset="utf-8">
-    $(function() {
-		$(document).endlessScroll({
-			bottomPixels: 500,
-			fireDelay: 10,
-			callback: function(i) {
-			  loading=true;
-			  $.ajax({
-					url: '/photosets/49?page=' + i,
-					type: 'get',
-					dataType: 'script',
-					success: function() {
-						loading=false;
-					}
-				});
-			};
-		});
-     };
-  </script>
