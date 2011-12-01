@@ -1,7 +1,4 @@
 <% content_for :body_class, 'admin set' %>
-<% content_for :custom_css do %>
-	<%= stylesheet_link_tag 'admin.css' %>
-<% end %>
 <%= render 'header' %>
 <% flash.each do |key, value| %>
   		<%= content_tag(:div, value, :class => "flash #{key}") %>

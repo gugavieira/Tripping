@@ -55,4 +55,9 @@ class PhotosetsController < ApplicationController
     end
     render nothing: true
   end
+
+  def friends
+    session[:friends] = true
+    redirect_to root_path
+  end
 end

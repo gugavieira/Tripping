@@ -7,6 +7,6 @@ Tripping::Application.routes.draw do
   root :to => "photosets#index"
 
   match "/admin/" => "admin#index"
-
+  match "/friends/" => "photosets#friends"
 
 end
