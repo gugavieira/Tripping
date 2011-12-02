@@ -1,8 +1,7 @@
 class PhotosetsController < ApplicationController
 
   def index
-    @title = "Home"
-    @photosets = Photoset.all
+    redirect_to root_path
   end
 
   def show

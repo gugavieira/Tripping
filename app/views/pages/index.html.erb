@@ -1,0 +1,9 @@
+<% content_for :body_class, 'home set' %>
+<%= render 'shared/header' %>
+<%= render 'recent' %>
+<div id="thumb_container">
+     <%= render :partial => 'photoset', :collection => @photosets[0..7] %>
+     <% if @photosets[8..-1] %>
+     	<%= render :partial => 'more_photoset', :collection => @photosets[8..-1] %>
+     <% end %>
+</div>

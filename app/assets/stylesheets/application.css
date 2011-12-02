@@ -38,7 +38,12 @@ p {
    padding-bottom: 18px; 
 }
 
-p a:hover{
+a{
+ color: #999999;
+ text-decoration: none;
+}
+
+a:hover{
     text-decoration: underline;
 }
 
@@ -53,16 +58,11 @@ h3 {
     text-transform: uppercase;
 }
 
-a{
- color: #999999;
- text-decoration: none;
-}
-
-
 #container{
     width: 978px;
     margin: auto;
     padding-bottom: 30px;
+    overflow: hidden;
 }
 
 #header {
@@ -101,11 +101,12 @@ a{
     float: left;
 }
 
+
+
 /* #########  PHOTOS PAGE ################# */
 
 #photos_container {
     margin-top: 37px;
-    overflow: hidden;    
 }
 
 #photos_header {
@@ -125,8 +126,70 @@ a{
     float: left;
 }
 
-#recent {
+/* #########  BLOG POSTS ################# */
+
+#posts_container {
+    width: 732px;
     margin-top: 37px;
+    float: left;
+    overflow: hidden;    
+}
+
+#posts_side_bar {
+    width: 211px;
+    float: left;
+    margin: 89px 0 0 34px;
+}
+
+.post {
+    margin-bottom: 36px;
+}
+
+.post_header {
+    padding: 16px 0 0 16px;
+    background: url(../images/corner.png) no-repeat top left;
+}
+
+.post .image_container {
+    width: 732px;
+    /*height: 488px;*/
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.post .image_container img {
+    width: 100%;
+}
+
+#rss_link {
+    width: 41px;
+    display: block;
+    margin-bottom: 18px;
+}
+
+
+a.link_photoset {
+    display: block;
+    height: 18px;
+    padding-left: 24px;
+    background: url(../images/photo_icon.png) no-repeat left center;
+    text-transform: uppercase;
+}
+
+#recent {
+    overflow: hidden;
+    margin-top: 37px;
+}
+
+#img_recent {
+    width: 732px;
+    height: 488px;
+    overflow: hidden;
+    float: left;
+}
+
+#img_recent img {
+    width: 100%;
 }
 
 #recent_text {
@@ -139,12 +202,13 @@ a{
 a.fb_share {
     display: block;
     height: 18px;
-    padding-left: 23px;
+    padding-left: 24px;
     background: url(../images/fb_icon.png) no-repeat left center;
     text-transform: uppercase;
 }
 
 #thumb_container{
+    clear: both;
     margin-left: -6px;
     margin-top: 31px;
     overflow: hidden;

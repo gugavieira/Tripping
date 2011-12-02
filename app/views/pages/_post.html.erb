@@ -1,0 +1,11 @@
+<div class="post">
+	<div class="post_header">
+    	<h2><%= post.title %></h2>
+	</div>
+	<div class="image_container"><%= image_tag post.image_url, :alt => post.title %></div>
+	<p><%= post.content %></p>
+	<% unless post.photoset_id.nil? %>
+		<p><%= link_to "go check the pictures", photoset_path(post.photoset_id), :class => "link_photoset" %></p>
+	<% end %>
+	<p><a href="#" class="fb_share">Share</a></p>
+</div>
