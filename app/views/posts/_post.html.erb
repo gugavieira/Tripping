@@ -7,5 +7,5 @@
 	<% unless post.photoset_id.nil? %>
 		<p><%= link_to "go check the pictures", photoset_path(post.photoset_id), :class => "link_photoset" %></p>
 	<% end %>
-	<p><a href="#" class="fb_share">Share</a></p>
+	<p><a href="#" class="fb_share" data-share-url="<%= post_url(post.id)%>">Share</a></p>
 </div>
