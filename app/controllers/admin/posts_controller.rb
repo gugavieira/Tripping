@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class Admin::PostsController < ApplicationController
 
 	def index
 		@posts = Post.all
@@ -12,9 +12,9 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.new(params[:post])
 	    if @post.save
-	      redirect_to posts_path, :flash => { :success => "Posted." }
+	      redirect_to admin_posts_path, :flash => { :success => "Posted." }
 	    else
-		  redirect_to new_post_path
+		  redirect_to new_admin_post_path
 	    end
 	end
 
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
 	    else
 	      flash[:error] = "I couldn't delete the post. Don't know why."
 	    end
-	  	redirect_to posts_path
+	  	redirect_to admin_posts_path
 	end
 
 	def feed
