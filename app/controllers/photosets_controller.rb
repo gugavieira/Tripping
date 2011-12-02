@@ -33,9 +33,12 @@ class PhotosetsController < ApplicationController
   
   def destroy
     photoset = Photoset.find(params[:id])
-    photoset.destroy
-    Photoset.refresh_order
-    flash[:success] = "Photoset deleted."
+    if photoset.destroy
+      Photoset.refresh_order
+      flash[:success] = "Photoset deleted."
+    else
+      flash[:error] = "I couldn't delete the photoset. Don't know why."
+    end
   	redirect_to admin_path
   end
 

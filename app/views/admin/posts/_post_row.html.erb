@@ -1,0 +1,9 @@
+<tr>
+	<td><%= post_row.id %></td>
+	<td><%= post_row.title %></td>
+	<td><%= post_row.updated_at.to_date.to_formatted_s(:rfc822) %></td>
+	<td>tags</td>
+	<td><%= link_to "edit", edit_admin_post_path(post_row) %> /
+	<%= link_to "delete", admin_post_path(post_row), :method => :delete, :confirm => "You sure?",
+                              :title => "Delete post #{post_row.id}" %></td>
+</tr>

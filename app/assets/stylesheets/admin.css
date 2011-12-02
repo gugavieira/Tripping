@@ -3,16 +3,16 @@ body.admin {
  color: black;
 }
 
-body.home #menu a.home{
-    border-bottom:2px solid white;
+body.sets #menu a.sets{
+    border-bottom:2px solid black;
 }
 
 body.blog #menu a.blog{
-    border-bottom:2px solid white;
+    border-bottom:2px solid black;
 }
 
-body.about #menu a.about{
-    border-bottom:2px solid white;
+body.cat #menu a.cat{
+    border-bottom:2px solid black;
 }
 
 a{
@@ -166,7 +166,7 @@ table .header:after {
 form {
   margin-bottom: 18px;
 }
-fieldset {
+form .fieldset {
   margin-bottom: 18px;
   padding-top: 18px;
 }
@@ -199,8 +199,7 @@ label,
 input,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  /*font-size: 13px;*/
   font-weight: normal;
   line-height: normal;
 }
@@ -691,6 +690,10 @@ textarea[readonly] {
 .form-stacked .actions {
   margin-left: -20px;
   padding-left: 20px;
+}
+
+#post_content {
+  height: 200px;
 }
 
 /*####### Flash messages #########*/

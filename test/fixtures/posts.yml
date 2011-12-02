@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id          :integer         not null, primary key
+#  title       :string(255)
+#  photoset_id :integer
+#  image_url   :string(255)
+#  content     :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  photoset_id: 1
+  image_url: MyString
+  content: MyString
+
+two:
+  title: MyString
+  photoset_id: 1
+  image_url: MyString
+  content: MyString

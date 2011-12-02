@@ -6,11 +6,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require grayscale
 //= require jquery.infinitescroll.min
 // require_tree .
-
-$(document).ready(function(){
-	grayscale( document.getElementsByTagName('img') );
-	//grayscale( $('.gray') );
-});

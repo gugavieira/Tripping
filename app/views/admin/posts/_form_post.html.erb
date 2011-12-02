@@ -1,0 +1,32 @@
+<%= form_for(@post, :url => url) do |f| %>
+<%= render 'error_messages', :object => f.object %>
+<fieldset class="fieldset">
+	<div class="clearfix">
+		<%= f.label :title %>
+		<div class="input">
+		<%= f.text_field :title, :class => "xlarge" %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :image_url, "Image URL" %>
+		<div class="input">
+		<%= f.text_field :image_url, :class => "xlarge" %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :photoset_id, "Link to photoset" %>
+		<div class="input">
+		<%= f.collection_select(:photoset_id, Photoset.all, :id, :name, {:include_blank => 'None'}) %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :content %>
+		<div class="input">
+		<%= f.text_area :content, :class => "xxlarge" %>
+		</div>
+	</div>
+  <div class="actions">
+    <%= f.submit "Post", :class => "btn" %>
+  </div> 
+</fieldset> 
+<% end %>

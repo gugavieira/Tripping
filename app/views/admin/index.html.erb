@@ -1,5 +1,10 @@
-<% content_for :body_class, 'admin set' %>
+<% content_for :header do %>
+	<%= javascript_include_tag 'admin.js' %>
+    <%= stylesheet_link_tag 'admin.css' %>
+<% end %>
+<% content_for :body_class, 'admin sets' %>
 <%= render 'header' %>
+
 <% flash.each do |key, value| %>
   		<%= content_tag(:div, value, :class => "flash #{key}") %>
 	<% end %>

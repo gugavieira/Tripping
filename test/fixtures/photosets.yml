@@ -8,6 +8,7 @@
 #  created_at       :datetime
 #  updated_at       :datetime
 #  flickr_thumb_url :string(255)
+#  position         :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html

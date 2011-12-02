@@ -1,0 +1,13 @@
+<% content_for :header do %>
+	<%= javascript_include_tag 'admin.js' %>
+    <%= stylesheet_link_tag 'admin.css' %>
+<% end %>
+<% content_for :body_class, 'admin blog' %>
+<%= render 'admin/header' %>
+
+<% flash.each do |key, value| %>
+	<%= content_tag(:div, value, :class => "flash #{key}") %>
+<% end %>
+<div id="posts_container">
+	<%= render 'form_post', :url => admin_post_path  %>
+</div>
