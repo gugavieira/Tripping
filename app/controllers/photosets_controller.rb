@@ -73,7 +73,6 @@ class PhotosetsController < ApplicationController
   def update_photos(photoset_id)
     photoset = Photoset.find(photoset_id)
     flickr_photos = photos_flickr_params(photoset.flickr_set_id) # :url, :private, :flickr_photo_id, :tags
-      binding.pry
     photoset.photo.destroy_all
     photoset.photo.build(flickr_photos)
     binding.pry
