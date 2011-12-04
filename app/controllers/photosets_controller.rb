@@ -79,6 +79,5 @@ class PhotosetsController < ApplicationController
     if photoset.save! 
       flash[:success] = 'Photos updated.'
     end
-    # photos_to_delete = photos.map{|p| p.flickr_photo_id} - flickr_photos.map{|p| p[:flickr_photo_id]} #select photos not on flickr_photos
   end
 end
