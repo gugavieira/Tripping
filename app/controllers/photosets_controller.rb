@@ -15,8 +15,8 @@ class PhotosetsController < ApplicationController
 
   def create
     new_photoset = Photoset.new(params[:photoset])
-    new_photoset.photo.build(photos_flickr_params(params[:photoset][:flickr_set_id]))
-    # binding.pry
+    flickr_photos = photos_flickr_params(params[:photoset][:flickr_set_id])
+    new_photoset.photo.build(flickr_photos)
     if new_photoset.save!
       Photoset.refresh_order
       flash[:Success] = 'Photoset imported.'

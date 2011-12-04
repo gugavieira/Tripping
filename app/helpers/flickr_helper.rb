@@ -12,7 +12,7 @@ module FlickrHelper
 
 	def photos_flickr_params (set_id)
 		photos = flickr_photos(set_id)
-		private_photos = flickr_photos_private(set_id)
+		private_photos = flickr_photos(set_id, true)
 	    photo_collection = Array.new
 	    photos["photo"].each do |photo, index|
 		    photo_collection << {:url => flickrurl_1024(photo),
@@ -35,29 +35,24 @@ module FlickrHelper
 		flickraw_response.to_a()
 	end
 
-	def flickr_photos (set_id)
+	def flickr_photos (set_id, restricted = false)
+		if restricted
+			filter = '3'
+		else
+			filter = '13'
+		end
 		flickraw_response = flickr.photosets.getPhotos(:photoset_id => set_id,
 													   :extras => 'tags',
-													   :privacy_filter => '13')
-		flickraw_response.to_hash()
-	end
-
-	def flickr_photos_private (set_id)
-		flickraw_response = flickr.photosets.getPhotos(:photoset_id => set_id,
-													   :extras => 'tags',
-													   :privacy_filter => '3')
+													   :privacy_filter => filter)
 		flickraw_response.to_hash()
 	end
 
 	def flickr_authenticate
-		unless session[:flickr_logged]
 			FlickRaw.api_key = "3b893b6dc999264844e09ea624784c74"
 			FlickRaw.shared_secret = "f64f8a131db50a00"
 			flickr.access_token = "72157628119605495-a0e68c4aee6782b8"
 			flickr.access_secret = "e4fe28d854d1ced3"
 			# flickr.get_access_token('72157628119605495-a0e68c4aee6782b8', 'e4fe28d854d1ced3', '386-750-440')
-			session[:flickr_logged] = true
-		end
 	end
 end
 
