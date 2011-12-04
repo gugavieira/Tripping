@@ -72,21 +72,14 @@ class PhotosetsController < ApplicationController
 
   def update_photos(photoset_id)
     photoset = Photoset.find(photoset_id)
-    photos = Photoset.find(photoset_id).photo
     flickr_photos = photos_flickr_params(photoset.flickr_set_id) # :url, :private, :flickr_photo_id, :tags
-    
-    flickr_photos.each do |flickr_photo|
-      photo = photos.find_by_flickr_photo_id(flickr_photo[:flickr_photo_id])
-      if photo.nil?
-        photos.create(flickr_photo)
-      else
-        photo.update_attributes(flickr_photo)
-      end
-    end
+      binding.pry
+    photoset.photo.destroy_all
+    photoset.photo.build(flickr_photos)
+    binding.pry
     if photoset.save! 
       flash[:success] = 'Photos updated.'
     end
-    # photos_to_add = flickr_photos.select{|flickr_photo| !photos.any?{|photo| photo.flickr_photo_id == flickr_photo[:flickr_photo_id]}} #select photos not yet imported
     # photos_to_delete = photos.map{|p| p.flickr_photo_id} - flickr_photos.map{|p| p[:flickr_photo_id]} #select photos not on flickr_photos
   end
 end

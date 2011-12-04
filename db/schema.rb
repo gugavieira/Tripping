@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111204133643) do
+ActiveRecord::Schema.define(:version => 20111204193353) do
 
   create_table "photos", :force => true do |t|
     t.integer  "photoset_id"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20111204133643) do
     t.string   "title"
     t.integer  "photoset_id"
     t.string   "image_url"
-    t.string   "content"
+    t.text     "content",     :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
