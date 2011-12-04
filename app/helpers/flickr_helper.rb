@@ -15,8 +15,10 @@ module FlickrHelper
 		private_photos = flickr_photos(set_id, true)
 	    photo_collection = Array.new
 	    photos["photo"].each do |photo, index|
-		    photo_collection << {:url => flickrurl_1024(photo),
-			    					   :private => private_photos["photo"].any?{|item| item.id == photo.id}}
+		    photo_collection << {:flickr_photo_id => photo.id.to_i(),
+			    				 :url => flickrurl_1024(photo),
+			    				 :private => private_photos["photo"].any?{|item| item.id == photo.id},
+			    				 :tags => photo.tags}
 		end
 	    photo_collection
 	end

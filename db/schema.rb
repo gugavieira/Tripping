@@ -11,14 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111201090337) do
+ActiveRecord::Schema.define(:version => 20111204133643) do
 
   create_table "photos", :force => true do |t|
     t.integer  "photoset_id"
     t.string   "url"
-    t.boolean  "private",     :default => false
+    t.boolean  "private",         :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "flickr_photo_id"
+    t.string   "tags"
   end
 
   create_table "photosets", :force => true do |t|
