@@ -12,9 +12,10 @@ class Admin::PostsController < ApplicationController
 	def create
 		@post = Post.new(params[:post])
 	    if @post.save
-	      redirect_to admin_posts_path, :flash => { :success => "Posted." }
+	      flash[:success] = "Posted."
+	      redirect_to admin_posts_path
 	    else
-		  redirect_to new_admin_post_path
+		  render 'new'
 	    end
 	end
 

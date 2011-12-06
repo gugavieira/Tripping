@@ -42,8 +42,10 @@ class PhotosetsController < ApplicationController
   end
 
   def update
-    update_thumbs(params[:id])
-    update_photos(params[:id])
+    case params[:target]
+      when "thumbs" then update_thumbs(params[:id])
+      when "photos" then update_photos(params[:id])
+    end
     redirect_to admin_path
   end
 
@@ -65,20 +67,23 @@ class PhotosetsController < ApplicationController
     photoset = Photoset.find(photoset_id) 
     flickr_set = flickr_set(photoset.flickr_set_id)
     photoset.flickr_thumb_url = flickrurl_240(flickr_set.primary)
-    if photoset.changed? && photoset.save! 
-      flash[:success] = 'Thumbnail updated.'
+    if photoset.changed?
+      flash[:success] = 'Thumbnail from ' + photoset.name + ' updated.' if photoset.save!
+    else
+      flash[:success] = 'Thumbnail from ' + photoset.name + ' was already updated.'
     end
+
   end
 
   def update_photos(photoset_id)
     photoset = Photoset.find(photoset_id)
     flickr_photos = photos_flickr_params(photoset.flickr_set_id) # :url, :private, :flickr_photo_id, :tags
     photoset.photo.destroy_all
-    photoset.photo.build(flickr_photos)
-    binding.pry
+    photos = photoset.photo.build(flickr_photos)
     if photoset.save! 
-      flash[:success] = 'Photos updated.'
+      flash[:success] = 'Photos from ' + photoset.name + ' reimported.'
     end
     # photos_to_delete = photos.map{|p| p.flickr_photo_id} - flickr_photos.map{|p| p[:flickr_photo_id]} #select photos not on flickr_photos
+    # flickr_photos.map{|item| [item[:flickr_photo_id], item[:url], item[:private], item[:tags]]} - photos.map{|item| [item.flickr_photo_id, item.url, item.private, item.tags]}
   end
 end

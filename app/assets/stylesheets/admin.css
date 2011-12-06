@@ -43,6 +43,8 @@ a{
 
 .thumbs a{
     text-transform: lowercase;
+    font-size: 12px;
+    background-color: #E6E6E6;
 }
 
 p.info {
