@@ -1,6 +1,6 @@
 Tripping::Application.routes.draw do
     
-  resources :photosets do
+  resources :photosets, :except => :edit do
   	collection { post :save_order }
   end
 
@@ -15,6 +15,7 @@ Tripping::Application.routes.draw do
   match "/admin/" => "admin#index", :as => :admin
   match "/friends/" => "photosets#friends"
   match "/blog/" => "posts#index"
+  match "/about/" => "pages#about"
 
   match '/feed' => "posts#feed", :as => :feed, :defaults => { :format => 'atom' }
 

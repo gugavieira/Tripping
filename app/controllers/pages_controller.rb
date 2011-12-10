@@ -6,5 +6,9 @@ class PagesController < ApplicationController
     @post = Post.first
   end
 
+  def about
+  	@title = "About Tripping"
+    @photosets = Photoset.all
+  end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111204193353) do
+ActiveRecord::Schema.define(:version => 20111206081939) do
 
   create_table "photos", :force => true do |t|
     t.integer  "photoset_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20111204193353) do
     t.datetime "updated_at"
     t.integer  "flickr_photo_id"
     t.string   "tags"
+    t.integer  "position"
   end
 
   create_table "photosets", :force => true do |t|

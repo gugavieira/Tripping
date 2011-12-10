@@ -27,9 +27,6 @@ class PhotosetsController < ApplicationController
     end
   end
   
-  def edit
-  end
-  
   def destroy
     photoset = Photoset.find(params[:id])
     if photoset.destroy
@@ -42,9 +39,10 @@ class PhotosetsController < ApplicationController
   end
 
   def update
-    case params[:target]
-      when "thumbs" then update_thumbs(params[:id])
-      when "photos" then update_photos(params[:id])
+    thumbs = update_thumbs(params[:id])
+    photos = update_photos(params[:id])
+    if thumbs && photos
+      flash[:success] = "Photos updated."
     end
     redirect_to admin_path
   end
@@ -67,23 +65,28 @@ class PhotosetsController < ApplicationController
     photoset = Photoset.find(photoset_id) 
     flickr_set = flickr_set(photoset.flickr_set_id)
     photoset.flickr_thumb_url = flickrurl_240(flickr_set.primary)
-    if photoset.changed?
-      flash[:success] = 'Thumbnail from ' + photoset.name + ' updated.' if photoset.save!
-    else
-      flash[:success] = 'Thumbnail from ' + photoset.name + ' was already updated.'
-    end
-
+    photoset.save!
   end
 
   def update_photos(photoset_id)
     photoset = Photoset.find(photoset_id)
-    flickr_photos = photos_flickr_params(photoset.flickr_set_id) # :url, :private, :flickr_photo_id, :tags
-    photoset.photo.destroy_all
-    photos = photoset.photo.build(flickr_photos)
-    if photoset.save! 
-      flash[:success] = 'Photos from ' + photoset.name + ' reimported.'
+    flickr_photos = photos_flickr_params(photoset.flickr_set_id)
+
+    flickr_photos.each_with_index do |flickr_photo, index| #updates and new photos
+      flickr_photo[:position] = index
+      photo = photoset.photo.find_by_flickr_photo_id(flickr_photo[:flickr_photo_id])
+      if photo
+        photo.update_attributes(flickr_photo)
+      else
+        photoset.photo.build(flickr_photo)
+      end
     end
-    # photos_to_delete = photos.map{|p| p.flickr_photo_id} - flickr_photos.map{|p| p[:flickr_photo_id]} #select photos not on flickr_photos
-    # flickr_photos.map{|item| [item[:flickr_photo_id], item[:url], item[:private], item[:tags]]} - photos.map{|item| [item.flickr_photo_id, item.url, item.private, item.tags]}
+
+    if photoset.photo.count > flickr_photos.length #handle deletion
+      photoset.photo.each do |photo|
+        photo.destroy unless flickr_photos.any? {|p| p[:flickr_photo_id] == photo.flickr_photo_id}
+      end
+    end
+    photoset.save!
   end
 end

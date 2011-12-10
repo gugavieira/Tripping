@@ -15,10 +15,10 @@ module FlickrHelper
 		private_photos = flickr_photos(set_id, true)
 	    photo_collection = Array.new
 	    photos["photo"].each do |photo, index|
-		    photo_collection << {"flickr_photo_id" => photo.id.to_i(),
-			    				 "url" => flickrurl_1024(photo),
-			    				 "private" => private_photos["photo"].any?{|item| item.id == photo.id},
-			    				 "tags" => photo.tags}
+		    photo_collection << {:flickr_photo_id => photo.id.to_i(),
+			    				 :url => flickrurl_1024(photo),
+			    				 :private => private_photos["photo"].any?{|item| item.id == photo.id},
+			    				 :tags => photo.tags}
 		end
 	    photo_collection
 	end
@@ -44,7 +44,7 @@ module FlickrHelper
 			filter = '13'
 		end
 		flickraw_response = flickr.photosets.getPhotos(:photoset_id => set_id,
-													   :extras => 'tags',
+													   :extras => 'tags', # url_l
 													   :privacy_filter => filter)
 		# flickraw_response.to_hash()
 	end
@@ -56,8 +56,4 @@ module FlickrHelper
 			flickr.access_secret = "e4fe28d854d1ced3"
 			# flickr.get_access_token('72157628119605495-a0e68c4aee6782b8', 'e4fe28d854d1ced3', '386-750-440')
 	end
-
-
 end
-
-# flickr.photosets.getPhotos(:photoset_id => 72157626646672290, :extras => 'tags', :privacy_filter => '3')

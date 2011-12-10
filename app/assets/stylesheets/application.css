@@ -126,6 +126,10 @@ h3 {
     float: left;
 }
 
+.pagination{
+    clear: both;
+}
+
 /* #########  BLOG POSTS ################# */
 
 #posts_container {
@@ -167,6 +171,61 @@ h3 {
     margin-bottom: 18px;
 }
 
+/* #########  ABOUT  ################# */
+
+#about_container {
+    /*width: 732px;*/
+    width: 483px;
+    margin: 37px 0 36px 0;
+    float: left;
+    overflow: hidden; 
+}
+
+#about_container p {
+    padding-left: 16px;
+}
+
+.about_header {
+    padding: 16px 0 0 16px;
+    background: url(../images/corner.png) no-repeat top left;
+}
+
+blockquote {
+    background-image: url(../images/open_quote.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    padding: 3px 35px 0 35px;
+    height: 22px;
+    font-family: PNovaSemibold;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+blockquote span{
+    background-image: url(../images/close_quote.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    height: 22px;
+    padding: 0 35px 0 0;
+    
+}
+
+cite {
+    padding-left: 29px;
+}
+
+#quote {
+    float: right;
+    margin: 37px 0 18px 0;
+    padding-top: 130px;
+}
+
+body.about #thumb_container {
+    border-top: 1px solid #999999;
+}
+
+
+/* #########  HOME  ################# */
 
 a.link_photoset {
     display: block;
@@ -210,7 +269,7 @@ a.fb_share {
 #thumb_container{
     clear: both;
     margin-left: -6px;
-    margin-top: 31px;
+    padding-top: 31px;
     overflow: hidden;
 }
 

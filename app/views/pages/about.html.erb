@@ -1,0 +1,25 @@
+<% content_for :body_class, 'about' %>
+<%= render 'shared/header' %>
+<div id="about_container">
+	<div class="about_header">
+		<h2>Tripping is not a travel photography blog.<br>Not only.</h2>
+	</div>
+	<p>It's a place to organize and share experiences. Most of them are related to travel, but hopefully you'll also find some interesting experiments as I develop my photography skills along the way.</p>
+	<p> I know I could have used something like Facebook, but I'm not that good at shooting food or cats. Maybe Flickr. But honestly, I'm not a big fan of their layout. And besides that I'd have missed out on the opportunity to try putting a whole website together by myself.</p>
+	<p></p>
+	<div class="about_header">
+		<h2>About me</h2>
+	</div>
+	<p>I'm a Brazilian <a href="http://www.gvdias.com" target=blank>Art Director</a> who came for a trip around Europe and ended up staying. I currently work and live in Germany.</p>
+
+</div>
+<div id="quote">
+	<blockquote><span>The journey is the destination.</span></blockquote>
+	<cite>- <a href="http://www.amazon.com/Journey-Destination-Journals-Dan-Eldon/dp/1452102503/ref=sr_1_1_title_0_main?s=books&ie=UTF8&qid=1323381999&sr=1-1" target=blank>The Journals of Dan Elton</a></cite>
+</div>
+<div id="thumb_container">
+     <%= render :partial => 'photoset', :collection => @photosets[0..7] %>
+     <% if @photosets[8..-1] %>
+     	<%= render :partial => 'more_photoset', :collection => @photosets[8..-1] %>
+     <% end %>
+</div>

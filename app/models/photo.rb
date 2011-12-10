@@ -16,4 +16,5 @@ class Photo < ActiveRecord::Base
 
 	scope :only_public, where(:private => false)
 
+	default_scope :order => 'position'
 end

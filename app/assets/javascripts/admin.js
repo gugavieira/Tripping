@@ -11,9 +11,9 @@ $(document).ready(function() {
     });
 	$( "#thumb_container" ).disableSelection();
 
-	$( "#save_order").click(function() {
-		$.post($( "#thumb_container" ).data('update-url'), $( "#thumb_container" ).sortable('serialize'));
-	});
+	// $( "#save_order").click(function() {
+	// 	$.post($( "#thumb_container" ).data('update-url'), $( "#thumb_container" ).sortable('serialize'));
+	// });
 
 });
 
