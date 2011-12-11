@@ -13,6 +13,16 @@ class PhotosetsController < ApplicationController
     end
   end
 
+  def slideshow
+    @photoset_name = Photoset.find(params[:id]).name
+    @title = "Slideshow: " + @photoset_name
+    if session[:friends]
+      @photos = Photoset.find(params[:id]).photo.all
+    else
+      @photos = Photoset.find(params[:id]).photo.only_public.all
+    end
+  end
+
   def create
     new_photoset = Photoset.new(params[:photoset])
     flickr_photos = photos_flickr_params(params[:photoset][:flickr_set_id])

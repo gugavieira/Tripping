@@ -1,7 +1,15 @@
 Tripping::Application.routes.draw do
     
   resources :photosets, :except => :edit do
-  	collection { post :save_order }
+    collection do
+      post 'save_order'
+    end
+    member do
+      get 'slideshow'
+    end
+  	# collection { post :save_order }
+    # post "save_order", :on => :collection
+  #   get "slideshow", :on => :member
   end
 
   namespace :admin do

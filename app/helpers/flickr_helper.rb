@@ -16,9 +16,12 @@ module FlickrHelper
 	    photo_collection = Array.new
 	    photos["photo"].each do |photo, index|
 		    photo_collection << {:flickr_photo_id => photo.id.to_i(),
-			    				 :url => flickrurl_1024(photo),
-			    				 :private => private_photos["photo"].any?{|item| item.id == photo.id},
-			    				 :tags => photo.tags}
+			    				 :url => photo.url_l,
+			    				 :thumb_url => photo.url_s,
+			    				 :tags => photo.tags,
+			    				 :height => photo.height_l,
+			    				 :width => photo.width_l,
+			    				 :private => private_photos["photo"].any?{|item| item.id == photo.id}}
 		end
 	    photo_collection
 	end
@@ -44,7 +47,7 @@ module FlickrHelper
 			filter = '13'
 		end
 		flickraw_response = flickr.photosets.getPhotos(:photoset_id => set_id,
-													   :extras => 'tags', # url_l
+													   :extras => 'tags, url_l, url_s', # url_l
 													   :privacy_filter => filter)
 		# flickraw_response.to_hash()
 	end

@@ -110,9 +110,26 @@ h3 {
 }
 
 #photos_header {
-    height: 54px;
     padding: 16px 0 0 16px;
     background: url(../images/corner.png) no-repeat top left;
+    overflow: hidden;
+}
+
+#photos_header h2 {
+    float:left;
+}
+
+#photos_header a.fb_share{
+    float:right;
+}
+
+#photos_header a.slideshow_link {
+    height: 18px;
+    padding-left: 24px;
+    margin-left: 27px;
+    background: url(../images/slideshow_icon.png) no-repeat left center;
+    text-transform: uppercase;
+    float:right;
 }
 
 .photo img {
@@ -129,6 +146,7 @@ h3 {
 .pagination{
     clear: both;
 }
+
 
 /* #########  BLOG POSTS ################# */
 
