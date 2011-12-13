@@ -311,13 +311,13 @@ a.fb_share {
     font-size: 12px;
 }
 
+.thumbs a:hover {
+    text-decoration: none;
+}
+
 .thumbs .thumbs_others {
     display: block;
     width: 240px;
     height: 16px;
     background-color: #151515;
-}
-
-.thumbs a:hover .img_container img {
-    visibility: hidden;
 }

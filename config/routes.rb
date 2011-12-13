@@ -24,8 +24,7 @@ Tripping::Application.routes.draw do
   match "/friends/" => "photosets#friends"
   match "/blog/" => "posts#index"
   match "/about/" => "pages#about"
+  match "/proxy/" => "pages#image_proxy"
 
   match '/feed' => "posts#feed", :as => :feed, :defaults => { :format => 'atom' }
-
-
 end
