@@ -1,8 +1,13 @@
 class ChangeIdsToBigintOnPhotos < ActiveRecord::Migration
   def up
-    change_column :photos, :photoset_id, :bigint
-    change_column :photos, :flickr_photo_id, :bigint
-    change_column :photosets, :flickr_set_id, :bigint
+	change_table :photos do |t|
+		t.bigint :photoset_id, :flickr_photo_id
+	end
+	change_table :photosets do |t|
+		t.bigint :flickr_set_id
+	end
+end
+
   end
 
   def down
