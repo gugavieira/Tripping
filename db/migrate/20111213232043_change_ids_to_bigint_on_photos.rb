@@ -6,8 +6,6 @@ class ChangeIdsToBigintOnPhotos < ActiveRecord::Migration
 	change_table :photosets do |t|
 		t.bigint :flickr_set_id
 	end
-end
-
   end
 
   def down
