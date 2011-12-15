@@ -119,10 +119,6 @@ h3 {
     float:left;
 }
 
-#photos_header a.fb_share{
-    float:right;
-}
-
 #photos_header a.slideshow_link {
     height: 18px;
     padding-left: 24px;
@@ -146,6 +142,57 @@ h3 {
 .pagination{
     clear: both;
 }
+
+a.share_icons {
+    float:right;
+    display: block;
+    height: 18px;
+    padding-left: 71px;
+    background: url(../images/share_icons.png) no-repeat left center;
+    text-transform: uppercase;
+}
+
+#share_panel {
+    color: black;
+    position: absolute;
+    top: 120px;
+    left: 800px;
+}
+
+#share_panel_top {
+    width: 183px;
+    height: 72px;
+    background-color: white;
+    padding-left: 10px;
+    padding-top: 7px;
+}
+
+#share_panel_bottom{
+       height: 31px;
+       background: url(../images/down_arrow.png) no-repeat 23px top;
+}
+
+#photos_header span:hover #share_panel{
+    left: 877px;
+}
+
+#share_panel .fb-like {
+    top: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+#share_panel .twitter-share-button-container {
+    top: 0px;
+    height: 62px;
+    position: relative;
+    display: inline-block;
+} 
+
+#share_panel .gplus-container {
+    display: inline;
+    margin-left: 5px;
+}  
 
 
 /* #########  BLOG POSTS ################# */

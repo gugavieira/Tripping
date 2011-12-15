@@ -3,9 +3,11 @@
 <div id="photos_container">
 	<div id="photos_header">
 	    <h2><%= @title %></h2>
-      <%= link_to "Slideshow", slideshow_photoset_path(params[:id]), :class=> "slideshow_link" %>
-      <a href="" class="fb_share">Share</a>
-    
+          <%= link_to "Slideshow", slideshow_photoset_path(params[:id]), :class=> "slideshow_link" %>
+<span>
+          <a href="" class="share_icons">Share</a>
+          <div id="share_panel"><%= render :partial => 'share_panel'%></div>
+</span>
 	</div>
 	<%= render :partial => 'photo', :collection => @photos %>
 </div>
