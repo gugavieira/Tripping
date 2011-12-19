@@ -8,16 +8,5 @@
 //= require jquery_ujs
 //= require jquery.infinitescroll.min
 //= require grayscale.js
+//= require social.js
 // require_tree .
-
-$(document).ready(function() {
-	$('.fb_share').click(function(){
-		url = $(this).data('share-url') || window.location.href;
-		alert(url)
-		window.open('http://www.facebook.com/sharer.php?src=bm&v=4&i=1322830844&u=' + url,'sharer','toolbar=0,status=0,resizable=1,width=626,height=436');
-	});
-});
-
-// $(window).load(function(){  
-// 	$(".gray").pixastic("desaturate");
-// });  

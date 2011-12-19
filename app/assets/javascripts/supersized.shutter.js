@@ -11,6 +11,18 @@
 
 */
 
+$(document).ready(function() {
+	if(jQuery.support.opacity){
+	   	$(document).mouseenter(function() {
+		   $('#prevslide, #nextslide, #back-button, #controls-wrapper').stop().animate({opacity:0.6},100);
+		}).mouseleave(function(){
+		   $('#prevslide, #nextslide, #back-button, #controls-wrapper').stop().animate({opacity:0},100);
+		});
+	}
+
+});
+
+
 (function($){
 	
 	theme = {
@@ -110,7 +122,7 @@
 		    
 		    	// Full Opacity on Hover
 		    	if(jQuery.support.opacity){
-			    	$(vars.prev_slide +','+vars.next_slide).mouseover(function() {
+			    	$(vars.prev_slide +','+vars.next_slide +','+vars.back_button).mouseover(function() {
 					   $(this).stop().animate({opacity:1},100);
 					}).mouseout(function(){
 					   $(this).stop().animate({opacity:0.6},100);
@@ -323,7 +335,9 @@
 		tray_arrow			:	'#tray-arrow',		// Thumbnail tray button arrow
 		tray_button			:	'#tray-button',		// Thumbnail tray button
 		
-		progress_bar		:	'#progress-bar'		// Progress bar
+		progress_bar		:	'#progress-bar',	// Progress bar
+
+		back_button			: 	'#back-button'
 	 												
 	 };												
 	

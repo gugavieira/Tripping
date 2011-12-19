@@ -14,8 +14,8 @@ class PhotosetsController < ApplicationController
   end
 
   def slideshow
-    @photoset_name = Photoset.find(params[:id]).name
-    @title = "Slideshow: " + @photoset_name
+    @photoset = Photoset.find(params[:id])
+    @title = "Slideshow: " + @photoset.name
     if session[:friends]
       @photos = Photoset.find(params[:id]).photo.all
     else

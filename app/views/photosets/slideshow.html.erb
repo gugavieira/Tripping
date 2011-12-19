@@ -28,7 +28,7 @@
 					transition_speed		:	300,		// Speed of transition
 															   
 					// Components							
-					slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+					slide_links				:	false,	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
 					thumb_links				:	1,			// Individual thumb links for each slide
 					thumbnail_navigation    :   0,			// Thumbnail navigation
 					slides 					:  	[			// Slideshow Images
@@ -50,11 +50,9 @@
 
 <body>
 
-	<!--Demo styles (you can delete this block)-->
-
+	<!--Website Navigation-->
+	<%= link_to '', photoset_path(@photoset), :id => 'back-button' %> 
 	
-	<!--End of styles-->
-
 	<!--Thumbnail Navigation-->
 	<div id="prevthumb"></div>
 	<div id="nextthumb"></div>
@@ -66,11 +64,6 @@
 	<div id="thumb-tray" class="load-item">
 		<div id="thumb-back"></div>
 		<div id="thumb-forward"></div>
-	</div>
-	
-	<!--Time Bar-->
-	<div id="progress-back" class="load-item">
-		<div id="progress-bar"></div>
 	</div>
 	
 	<!--Control Bar-->

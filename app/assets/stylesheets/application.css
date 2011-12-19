@@ -62,12 +62,13 @@ h3 {
     width: 978px;
     margin: auto;
     padding-bottom: 30px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 #header {
     margin-top: 64px;
     overflow: hidden;
+    margin-left: -30px;
 }
 
 #logo {
@@ -119,15 +120,6 @@ h3 {
     float:left;
 }
 
-#photos_header a.slideshow_link {
-    height: 18px;
-    padding-left: 24px;
-    margin-left: 27px;
-    background: url(../images/slideshow_icon.png) no-repeat left center;
-    text-transform: uppercase;
-    float:right;
-}
-
 .photo img {
     display: block;
     max-width: 978px;
@@ -143,9 +135,24 @@ h3 {
     clear: both;
 }
 
+#photos_header ul{
+    float: right;
+}
+
+#photos_header li{
+    display: inline;
+    margin-left: 27px;
+}
+
+#photos_header a.slideshow_link {
+    height: 18px;
+    padding-left: 24px;
+    background: url(../images/slideshow_icon.png) no-repeat left center;
+    text-transform: uppercase;
+}
+
 a.share_icons {
-    float:right;
-    display: block;
+    overflow: hidden;
     height: 18px;
     padding-left: 71px;
     background: url(../images/share_icons.png) no-repeat left center;
@@ -156,7 +163,16 @@ a.share_icons {
     color: black;
     position: absolute;
     top: 120px;
-    left: 800px;
+    left: -9999px;
+    margin-left: 27px;
+}
+
+#photos_menu li:hover #share_panel{
+    left: auto;
+}
+
+#photos_menu li:hover a{
+    text-decoration: underline;
 }
 
 #share_panel_top {
@@ -172,24 +188,20 @@ a.share_icons {
        background: url(../images/down_arrow.png) no-repeat 23px top;
 }
 
-#photos_header span:hover #share_panel{
-    left: 877px;
-}
-
 #share_panel .fb-like {
-    top: 1px;
     position: relative;
-    display: inline-block;
+    display: inline;
+    top: -2px;
 }
 
 #share_panel .twitter-share-button-container {
-    top: 0px;
-    height: 62px;
+    top: 2px;
     position: relative;
-    display: inline-block;
+    display: inline;
 } 
 
 #share_panel .gplus-container {
+    position: relative;
     display: inline;
     margin-left: 5px;
 }  

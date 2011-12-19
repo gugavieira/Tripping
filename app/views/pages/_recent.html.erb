@@ -6,7 +6,6 @@
 	    <p><a href="/blog"><%= wrap(@post.content) %></a></p>
 	    <% unless @post.photoset_id.nil? %>
 			<p><%= link_to "go check the pictures", photoset_path(@post.photoset_id), :class => "link_photoset" %></p>
-	    	<p><a href="#" class="fb_share" data-share-url="<%= photoset_url(@post.photoset_id) %>">Share</a></p>
 		<% end %>
     </div>
 </div>
