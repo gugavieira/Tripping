@@ -6,5 +6,6 @@ class AdminController < ApplicationController
     @title = "Admin"
     @photosets = Photoset.all
     @new_photoset = Photoset.new
+    @not_imported_sets = not_imported_sets # From FlickrHelper
   end
 end

@@ -22,10 +22,10 @@ $(document).ready(function() {
 		
 		// Fade image 
 		$('.gray').mouseover(function(){
-			$(this).parent().find('img:first').stop().animate({opacity:1}, 300);
+			$(this).parent().find('img:first').stop().animate({opacity:1}, 100);
 		})
 		$('.img_grayscale').mouseout(function(){
-			$(this).stop().animate({opacity:0}, 200);
+			$(this).stop().animate({opacity:0}, 100);
 		});		
 	});
 	

@@ -6,7 +6,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.easing.1.3
+//= require grayscale
 //= require jquery.infinitescroll.min
-//= require grayscale.js
-//= require social.js
+//= require social
+//= require jquery.ui.totop
+
 // require_tree .

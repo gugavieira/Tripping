@@ -18,10 +18,9 @@
 	<% else %>
 		<p>No photosets to show.</p>
 	<% end %>
-</div>
-<div id="thumb_container">
-    <% unless not_imported_sets.empty? %>
+
+    <% unless @not_imported_sets.empty? %>
 	    <h2>Not imported sets:</h2>
-    	<%= render :partial => 'admin/not_imported_set', :collection => not_imported_sets %>
+    	<%= render :partial => 'admin/not_imported_set', :collection => @not_imported_sets %>
     <% end %>
 </div>

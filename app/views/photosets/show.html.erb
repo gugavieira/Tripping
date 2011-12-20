@@ -1,4 +1,22 @@
 <% content_for :body_class, '' %>
+<% content_for :header do %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      /*
+      var defaults = {
+          containerID: 'moccaUItoTop', // fading element id
+        containerHoverClass: 'moccaUIhover', // fading element hover class
+        scrollSpeed: 1200,
+        easingType: 'linear' 
+      };
+      */
+      
+      $().UItoTop({ easingType: 'easeOutQuart' });
+      
+    });
+  </script>
+<% end %>
+
 <%= render 'shared/header' %>
 <div id="photos_container">
 	<div id="photos_header">
@@ -16,6 +34,7 @@
 	<%= render :partial => 'photo', :collection => @photos %>
 </div>
 <%= will_paginate @photos %>
+
 <script>
   $('#photos_container').infinitescroll({
  
