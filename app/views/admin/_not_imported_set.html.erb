@@ -3,7 +3,7 @@
 	<h3><%= not_imported_set.title %></h3>
 	<p class="info">Set ID: <%= not_imported_set.id %></br>
 	<%= not_imported_set.photos %> fotos</p>
-	<%= form_for (@new_photoset) do |f| %>
+	<%= form_for [:admin, @new_photoset] do |f| %>
 				                      <%= f.hidden_field :name, :value => not_imported_set.title %>
 				                      <%= f.hidden_field :flickr_set_id, :value => not_imported_set.id %>
 				                      <%= f.hidden_field :flickr_thumb_url, :value => flickrurl_240(not_imported_set.primary) %>

@@ -11,7 +11,7 @@
 
 <div id="admin_actions">
 </div>
-<div id="thumb_container" data-update-url="<%= save_order_photosets_path %>">
+<div id="thumb_container" data-update-url="<%= save_order_admin_photosets_path %>">
 	<h2>Sets:</h2>
 	<% unless @photosets.empty? %>
 		<%= render :partial => 'admin/photoset', :collection => @photosets %>

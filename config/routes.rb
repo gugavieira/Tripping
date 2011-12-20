@@ -1,19 +1,18 @@
 Tripping::Application.routes.draw do
     
-  resources :photosets, :except => :edit do
-    collection do
-      post 'save_order'
-    end
+  resources :photosets, :only => [:index, :show] do
     member do
       get 'slideshow'
     end
-  	# collection { post :save_order }
-    # post "save_order", :on => :collection
-  #   get "slideshow", :on => :member
   end
 
   namespace :admin do
     resources :posts, :except => :show
+    resources :photosets, :only => [:create, :destroy, :update] do
+      collection do
+        post 'save_order'
+      end
+    end
   end
 
   resources :posts, :only => [:index, :show, :feed]

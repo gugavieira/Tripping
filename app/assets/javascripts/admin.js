@@ -10,11 +10,4 @@ $(document).ready(function() {
 									   update: function() { $.post($(this).data('update-url'), $(this).sortable('serialize'))}   
     });
 	$( "#thumb_container" ).disableSelection();
-
-	// $( "#save_order").click(function() {
-	// 	$.post($( "#thumb_container" ).data('update-url'), $( "#thumb_container" ).sortable('serialize'));
-	// });
-
 });
-
-// $.post($( "#thumb_container" ).data('update-url'), $(this).sortable('serialize')) });
