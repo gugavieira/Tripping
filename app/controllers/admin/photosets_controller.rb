@@ -1,6 +1,9 @@
 class Admin::PhotosetsController < ApplicationController
 
-before_filter :flickr_authenticate, :only => [:create, :update]
+  http_basic_authenticate_with :name => Tripping::Application.config.admin_username,
+                   :password => Tripping::Application.config.admin_password
+
+  before_filter :flickr_authenticate, :only => [:create, :update]
 
  def create
     new_photoset = Photoset.new(params[:photoset])

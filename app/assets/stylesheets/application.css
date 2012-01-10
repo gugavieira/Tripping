@@ -62,14 +62,14 @@ h3 {
 #container{
     width: 978px;
     margin: auto;
-    padding-bottom: 30px;
+    padding: 0 6px 30px 6px;
     /*overflow: hidden;*/
 }
 
 #header {
     margin-top: 64px;
     overflow: hidden;
-    margin-left: -30px;
+    /*margin-left: -30px;*/
 }
 
 #logo {
@@ -327,7 +327,9 @@ a.link_photoset {
     float: left;
 }
 
-#img_recent img {
+#img_recent img,
+#img_recent gray,
+#img_recent img_grayscale {
     width: 100%;
 }
 

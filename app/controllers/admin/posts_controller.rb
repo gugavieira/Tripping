@@ -1,5 +1,8 @@
 class Admin::PostsController < ApplicationController
 
+  http_basic_authenticate_with :name => Tripping::Application.config.admin_username,
+  							   :password => Tripping::Application.config.admin_password
+
 	def index
 		@posts = Post.all
 	end
