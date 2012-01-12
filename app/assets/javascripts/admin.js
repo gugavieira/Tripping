@@ -1,5 +1,6 @@
 //= require jquery-ui
 
+// Drag and Drop to reorder photosets
 $(document).ready(function() {
 	$( "#thumb_container" ).sortable({ handle: 'img', 
 									   distance: 30,

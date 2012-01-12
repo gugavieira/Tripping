@@ -47,6 +47,11 @@ a{
     background-color: #E6E6E6;
 }
 
+.sets_container {
+  width: 100%;
+  overflow: hidden;
+}
+
 p.info {
    font-size: 11px;
 }
