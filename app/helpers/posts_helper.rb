@@ -1,7 +1,7 @@
 module PostsHelper 
   def wrap(content)
     content = sanitize(raw(content.split.map{ |s| wrap_long_string(s) }.join(' ')))
-	raw(truncate(content, :length => 500, :separator => ' ', :omission => ' &raquo;'))
+	  truncate(content, :length => 500, :separator => ' ', :omission => ' &raquo;')
   end
 
   private

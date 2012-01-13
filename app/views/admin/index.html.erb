@@ -11,20 +11,18 @@
 
 <div id="admin_actions">
 </div>
-<div id="thumb_container" data-update-url="<%= save_order_admin_photosets_path %>">
-	<div class="sets_container">
-	<h2>Sets:</h2>
-	<% unless @photosets.empty? %>
-		<%= render :partial => 'admin/photoset', :collection => @photosets %>
-	<% else %>
-		<p>No photosets to show.</p>
-	<% end %>
+	<div id="thumb_container" data-update-url="<%= save_order_admin_photosets_path %>">
+		<h2>Sets:</h2>
+		<% unless @photosets.empty? %>
+			<%= render :partial => 'admin/photoset', :collection => @photosets %>
+		<% else %>
+			<p>No photosets to show.</p>
+		<% end %>
 	</div>
-	<div class="sets_container">
-    <% unless @not_imported_sets.empty? %>
-	   <h2>Not imported sets:</h2>
-    	<%= render :partial => 'admin/not_imported_set', :collection => @not_imported_sets %>
-    <% end %>
-    </div>
-    
+	<div id="thumb_container_notimported">
+	    <% unless @not_imported_sets.empty? %>
+		   <h2>Not imported sets:</h2>
+	    	<%= render :partial => 'admin/not_imported_set', :collection => @not_imported_sets %>
+	    <% end %>   
+	</div> 
 </div>

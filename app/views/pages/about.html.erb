@@ -4,7 +4,7 @@
 	<div class="about_header">
 		<h2>Tripping is getting out of the routine.</h2>
 	</div>
-	<p>It is going out and exploring the world. Looking for the next shot is not more than an excuse to go to places that otherwise would have been missed, whether it's a country or a dark alley. It makes wonder what's behind a closed door, after a turn in the road going to the wrong direction. Photography gives meaning to this curiosity and Tripping is a place to share it.</p>
+	<p>Tripping is going out and exploring the world. To look for the next shot is just an excuse to go to places that otherwise would have been missed. Whether it's a country, a city or a dark alley. It makes me wonder what's behind a closed door or after a turn in the road going to the wrong direction. Photography gives meaning to this curiosity and Tripping is a place to share it.</p>
 	<p></p>
 	<div class="about_header">
 		<h2>About me</h2>
@@ -19,8 +19,8 @@
 	<cite>- <a href="http://www.amazon.com/Journey-Destination-Journals-Dan-Eldon/dp/1452102503/ref=sr_1_1_title_0_main?s=books&ie=UTF8&qid=1323381999&sr=1-1" target=blank>The Journals of Dan Elton</a></cite>
 </div>
 <div id="thumb_container">
-     <%= render :partial => 'photoset', :collection => @photosets[0..7] %>
-     <% if @photosets[8..-1] %>
-     	<%= render :partial => 'more_photoset', :collection => @photosets[8..-1] %>
+     <%= render :partial => 'photoset', :collection => @photosets[0..11] %>
+     <% if @photosets[12..-1] %>
+     	<%= render :partial => 'more_photoset', :collection => @photosets[12..-1] %>
      <% end %>
 </div>

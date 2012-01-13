@@ -35,6 +35,14 @@ body.about #menu a.about{
     border-bottom:2px solid white;
 }
 
+em, i {
+    font-style: italic;
+}
+
+strong, b {
+    font-weight: bolder;
+}
+
 p {
    padding-bottom: 18px; 
 }

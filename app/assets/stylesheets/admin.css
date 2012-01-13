@@ -47,9 +47,10 @@ a{
     background-color: #E6E6E6;
 }
 
-.sets_container {
-  width: 100%;
-  overflow: hidden;
+#thumb_container_notimported {
+  clear: both;
+  margin-left: -6px;
+  oveflow: hidden;
 }
 
 p.info {
