@@ -324,6 +324,24 @@ body.about #thumb_container {
     border-top: 1px solid #999999;
 }
 
+#about_container a.mail_link {
+    height: 18px;
+    padding-left: 24px;
+    background: url(../images/mail-icon.png) no-repeat left center;
+}
+
+#about_container a.flickr_link {
+    height: 18px;
+    padding-left: 24px;
+    background: url(../images/flickr-icon.png) no-repeat left center;
+}
+
+#about_container a.twitter_link {
+    height: 18px;
+    padding-left: 24px;
+    background: url(../images/twitter-icon.png) no-repeat left center;
+}
+
 
 /* #########  HOME  ################# */
 
