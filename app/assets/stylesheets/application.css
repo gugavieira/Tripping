@@ -378,6 +378,13 @@ a.link_photoset {
     padding: 16px 0 0 14px;
 }
 
+#recent_text b,
+#recent_text strong {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
 a.fb_share {
     display: block;
     height: 18px;

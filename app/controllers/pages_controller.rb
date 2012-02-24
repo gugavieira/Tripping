@@ -1,20 +1,15 @@
 class PagesController < ApplicationController
-
   require 'open-uri'
 
   def home
     @title = "Home"
     @photosets = Photoset.all
+    @post = recent_tumblr
   end
 
   def about
   	@title = "About Tripping"
     @photosets = Photoset.all
-  end
-
-  def test_send
-    data = "Hello World!"
-    send_data( data, :filename => "my_file.txt" )
   end
 
   def image_proxy

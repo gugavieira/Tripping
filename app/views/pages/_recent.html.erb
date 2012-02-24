@@ -1,11 +1,7 @@
 <div id="recent">
-	<div id="img_recent"><%= image_tag @post.image_url, :alt => 'Recent' %></div>
+	<div id="img_recent"><%= image_tag @post['photo_url'][0], :alt => 'Recent' %></div>
     <div id="recent_text">
 	    <h3>Latest</h3>
-	    <h2><a href="/blog"><%= @post.title %></a></h2>
-	    <p><a href="/blog"><%= wrap(@post.content) %></a></p>
-	    <% unless @post.photoset_id.nil? %>
-			<p><%= link_to "go check the pictures", photoset_path(@post.photoset_id), :class => "link_photoset" %></p>
-		<% end %>
+	    <%= link_to wrap(@post['photo_caption']), @post['url_with_slug'] %>
     </div>
 </div>

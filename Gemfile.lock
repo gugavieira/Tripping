@@ -56,6 +56,9 @@ GEM
     flickraw-cached (20110920)
       flickraw (>= 0.9)
     hike (1.2.1)
+    httparty (0.8.1)
+      multi_json
+      multi_xml
     i18n (0.6.0)
     jquery-rails (1.0.17)
       railties (~> 3.0)
@@ -65,10 +68,14 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    matenia-tumblr-api (0.1.6)
+      activesupport
+      httparty
     method_source (0.6.7)
       ruby_parser (>= 2.3.1)
     mime-types (1.17.2)
     multi_json (1.0.3)
+    multi_xml (0.4.1)
     pg (0.11.0)
     polyglot (0.3.3)
     pry (0.9.7.4)
@@ -140,6 +147,7 @@ DEPENDENCIES
   faker (= 0.3.1)
   flickraw-cached
   jquery-rails
+  matenia-tumblr-api
   pg
   pry
   rails (= 3.1.0)
