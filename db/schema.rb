@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111213232043) do
+ActiveRecord::Schema.define(:version => 20120224140013) do
 
   create_table "photos", :force => true do |t|
     t.integer  "photoset_id"
@@ -37,14 +37,5 @@ ActiveRecord::Schema.define(:version => 20111213232043) do
   end
 
   add_index "photosets", ["flickr_set_id"], :name => "index_photosets_on_flickr_set_id", :unique => true
-
-  create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.integer  "photoset_id"
-    t.string   "image_url"
-    t.text     "content",     :limit => 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end
