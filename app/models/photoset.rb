@@ -16,6 +16,10 @@ class Photoset < ActiveRecord::Base
 	
 	default_scope :order => 'position'
 
+	def to_param
+		"#{id} #{name}".parameterize
+	end
+
 	def self.refresh_order
 		self.all.each_with_index do |photoset, index|
 			photoset.update_attributes(:position => index + 1)
